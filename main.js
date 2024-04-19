@@ -25,22 +25,6 @@ const tempoObjetivo4 = new Date("2024-02-01T00:00:00");
 const tempos = [tempoObjetivo1,tempoObjetivo2,tempoObjetivo3,tempoObjetivo4];
 
 
-function atualizaCronometro(){ 
-    document.getElementById("dias0").textContent = calculaTempo(tempos[1])[0];
-    document.getElementById("horas0").textContent = calculaTempo(tempos[1])[1];  
-    document.getElementById("min0").textContent = calculaTempo(tempos[1])[2];
-    document.getElementById("seg0").textContent = calculaTempo(tempos[1])[3];
-    for (let i=0; i<contadores.length;i++){
-        contadores[i].textContent = calculaTempo(tempos[i]);   
-    }
-}
-
-function comecaCronometro(){
-    atualizaCronometro();
-    setInterval(atualizaCronometro,1000);
-}
-
-//comecaCronometro();
 
 
 function calculaTempo(tempoObjetivo) {
@@ -59,6 +43,22 @@ function calculaTempo(tempoObjetivo) {
     } else {
         return [0,0,0,0];
     }
+}
+
+
+function atualizaCronometro(){ 
+    document.getElementById("dias0").textContent = calculaTempo(tempos[1])[0];
+    document.getElementById("horas0").textContent = calculaTempo(tempos[1])[1];  
+    document.getElementById("min0").textContent = calculaTempo(tempos[1])[2];
+    document.getElementById("seg0").textContent = calculaTempo(tempos[1])[3];
+    for (let i=0; i<contadores.length;i++){
+        contadores[i].textContent = calculaTempo(tempos[i]);   
+    }
+}
+
+function comecaCronometro(){
+    atualizaCronometro();
+    setInterval(atualizaCronometro,1000);
 }
 
 comecaCronometro();
