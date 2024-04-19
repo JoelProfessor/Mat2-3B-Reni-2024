@@ -61,5 +61,8 @@ function calculaTempo(tempoObjetivo) {
     }
 }
 
+comecaCronometro();
+
+
 
 
